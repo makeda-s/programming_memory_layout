@@ -12,7 +12,7 @@ int n = 0;
 
 int main(void) {
 
-    int counter = 0;
+    int counter = 0; //stack - regular variable
 
     while(n <2) {
         increaseCounter_local();
@@ -27,16 +27,17 @@ int main(void) {
 }
 
 void increaseCounter_local() {
-    int localCounter = 0;
+    int localCounter = 0; //data
     localCounter++;
 }
 
 void increaseCounter_static(){
     static int staticCounter = 0;
-    staticCounter++;
+    staticCounter++; //somehow the code skips to here. so it remembers the last state the counter was in somehow. you can do this by
+    //either making it a static variable to hold the counter or you can pass by reference.
 }
 
 void increaseCounter_pointer(int *counter_p) {
-    *counter_p += 1;
+    *counter_p += 1; //add one to the content of the pointer
 }
 
